@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
   
   root 'things#index'
-  get '/about_me' => 'welcome#about_me'
-  get '/contact_me' => 'welcome#contact_me'
-  get '/faqs' => 'welcome#faqs'
+  
+  get '/things' => 'things#index'
+  get '/things/new' => 'things#new'
+  post '/things' => 'things#create'
+  get '/things/:id' => 'things#show'
+  get '/things/:id/edit' => 'things#edit'
+  put '/things/:id' => 'things#update'
+  delete '/things/:id' => 'things#destroy'
+
+  get '/about' => 'things#about'
+  get '/contact' => 'things#contact'
+  get '/faqs' => 'things#faqs'
 
 
 
